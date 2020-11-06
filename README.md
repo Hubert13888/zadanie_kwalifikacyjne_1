@@ -10,4 +10,4 @@ Stworzenie aplikacji reactowej do zarządzania domową biblioteką
 Link do Sandboxa:
 
 <a href="https://codesandbox.io/s/zadanie-kwalifikacyjne-1-fmf4s?file=/src/App.tsx" target="_blank"><img src="https://avatars2.githubusercontent.com/u/32880324?s=200&v=4" 
-alt="Sandbox Link" width="240" height="180" border="10" /></a>
+alt="Sandbox Link" width="180" height="180" border="10" /></a>

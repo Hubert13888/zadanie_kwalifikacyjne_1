@@ -1,22 +1,22 @@
 import React from "react";
 
-interface StateKsiazka {
+interface StateBook {
   title?: String;
   author?: String;
-  relDate?: Date;
+  relDate?: number;
 }
-interface PropsKsiazka {
+export interface PropsBook {
   title: String;
   author: String;
-  relDate: Date;
+  relDate: number;
 }
 
-export default class Ksiazka extends React.Component<PropsKsiazka> {
-  state: StateKsiazka = {
+export default class Book extends React.Component<PropsBook> {
+  state: StateBook = {
     title: "",
     author: ""
   };
-  constructor(props: PropsKsiazka) {
+  constructor(props: PropsBook) {
     super(props);
 
     this.state.title = props.title;
@@ -27,7 +27,9 @@ export default class Ksiazka extends React.Component<PropsKsiazka> {
   render() {
     return (
       <>
-        <div className="ksiazka_tile"></div>
+        <div className="ksiazka_tile">
+          <p>{this.state.author}</p>
+        </div>
       </>
     );
   }

@@ -1,6 +1,8 @@
-const addBook = () => {
+import { PropsBook } from "../Book";
+const addBook = (bookData: PropsBook) => {
   return {
-    name: "ADDBOOK"
+    type: "ADDBOOK",
+    payload: bookData
   };
 };
 export default addBook;

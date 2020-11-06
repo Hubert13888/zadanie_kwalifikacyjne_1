@@ -1,5 +1,6 @@
 # Zadanie kwalifikacyjne na stanowisko Frontend Developer (Mid)
 
+Stworzenie aplikacji reactowej do zarządzania domową biblioteką
 * Listę książek (posiadających: tytuł, autora, rok wydania) reprezentowana w postaci kafelków (liczba kafelków w rzędzie zależna od wielkości okna przeglądarki)
 * Możliwość usuwania i dodawania nowych książek
 * Możliwość tekstowego filtrowania książek po fragmencie tytułu

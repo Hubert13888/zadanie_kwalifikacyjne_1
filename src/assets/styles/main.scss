@@ -1,0 +1,225 @@
+*{
+  padding: 0;
+  margin: 0;
+  border: none;
+  //background-color: transparent;
+  font-family: "Calibri";
+
+  h1, h2, h3 {
+    text-align: center;
+  }
+}
+.app {
+  display: flex;
+  align-items: column;
+  * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .book_add_form {
+    z-index: 2;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: rgba(0, 0, 0, 0.9);
+
+    transition: 200ms;
+    transform: none;
+    opacity: 100%;
+
+    form {
+      width: 60vw;
+      height: 100vh;
+      padding: 30px 20px;
+      background-color: #fff;
+      border-radius: 4px;
+      h1 {
+        margin: 0;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+      }
+      p {
+        color: #333;
+        margin: 3vw;
+      }
+      input {
+        text-align: center;
+        margin: 10px;
+        border-bottom: #333 1.5px solid;
+        padding-bottom: 5px;
+
+        transition: border-bottom 200ms;
+
+        &:focus {
+          border-bottom: #27a348 1.5px solid;
+        }
+      }
+      section {
+        input {
+          width: 70px;
+          margin-left: 20px;
+        }
+        select {
+          background-color: #eee;
+          padding: 5px;
+        }
+      }
+      
+      .book_add_form__buttons {
+        margin-top: 10px;
+        button {
+          margin-top: 20px;
+          font-size: 16px;
+          background-color: transparent;
+          color: #333;
+          cursor: pointer;
+          transition: 200ms;
+        }
+        .book_add_form__add_btn {
+          background-color: #27a348;
+          color: #fff;
+          padding: 10px 20px;
+          border-radius: 10px;
+          margin-left: 20px;
+          &:hover {
+            background-color: #1f823a;
+          }
+        }
+        .book_add_form__close_btn {
+          border-bottom: transparent 2px solid;
+          padding: 2px;
+          &:hover {
+            border-bottom: #27a348 2px solid;
+          }
+        }
+      }
+    }
+  }
+  
+  form {
+    flex-direction: column;
+    
+  }
+  
+  main {
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    .book_add_form__show_btn {
+      position: fixed;
+      z-index: 2;
+      bottom: 10vh;
+      right: 10vw;
+
+      width: 50px;
+      height: 50px;
+
+      border-radius: 50%;
+      background-color: #27a348;
+
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
+
+      transition: background-color 200ms;
+
+      &:hover {
+        background-color: #333;
+      }
+    }
+  }
+  h1{
+    margin-top: 20vh;
+    text-transform: uppercase;
+  }
+  .title_filter {
+    input {
+      margin: 10vh;
+      text-align: center;
+      padding:  10px 20px;
+      font-size: 16px;
+      width: 40vw;
+      border-bottom: #333 solid 2px;
+      transition: 200ms;
+
+      &:focus {
+        border-bottom: #1f823a solid 2px;
+      }
+    }
+  }
+  .library {
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    .library__book {
+      position: relative;
+      flex-direction: column;
+      height: 150px;
+      width: 150px;
+      margin: 10px;
+      border: 2px #333 solid;
+      border-radius: 5px;
+      &>* {
+        text-align: center;
+        padding: 0 5px;
+      }
+      .library__book__title {
+        font-size: 20px;
+        font-style: italic;
+        font-weight: bold;
+      }
+      .library__book__author {
+        font-size: 14px;
+        text-align: right;
+        justify-content: flex-end;
+      }
+      .library__book__released {
+        flex-direction: column;
+        margin-top: 10px;
+        font-size: 12px;
+        span {
+          font-size: 13px;
+        }
+      }
+      .library__book__close {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        font-size: 25px;
+        width: 15px;
+        height: 15px;
+        background-color: #333;
+        padding: 5px;
+        margin: 0;
+        color: #333;
+        cursor: pointer;
+
+        transition: 200ms;
+
+        &:hover {
+          color: #1f823a;
+        }
+      }
+    }
+  }
+  .no_position {
+    color: #777;
+    font-size: 14px;
+  }
+}
+.hide {
+  display: none;
+}
+.slide_left {
+  transform: translateX(-100%) !important;
+  opacity: 0%;
+  pointer-events: none
+}

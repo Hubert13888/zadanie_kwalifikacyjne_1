@@ -1,33 +1,43 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import addBook from "./actions/addBook";
-import "./styles.css";
+import React, { useState } from "react";
 
-interface Reducers {
+import AddBookForm from "./AddBookForm";
+import FilterForm from "./FilterForm";
+
+import ClassNames from "classnames";
+
+import "./assets/styles/main.scss";
+
+export interface Reducers {
   bookManager: any;
 }
 
 export default function App() {
-  const bookManager = useSelector((state: Reducers) => state.bookManager);
-  const dispatch = useDispatch();
-
+  const [hide_form, setHideForm] = useState(true);
   return (
-    <div className="App">
-      <div>{bookManager}</div>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          dispatch(
-            addBook({
-              author: "abcd",
-              title: "efgh",
-              relDate: 1
-            })
-          );
-        }}
+    <div className="app">
+      <nav
+        className={ClassNames({
+          book_add_form: true,
+          slide_left: hide_form
+        })}
       >
-        Dodaj książkę
-      </button>
+        <AddBookForm goBack={() => setHideForm(true)} />
+      </nav>
+      <main>
+        <button
+          className={ClassNames({
+            book_add_form__show_btn: true,
+            hide: !hide_form
+          })}
+          onClick={(e) => {
+            setHideForm(false);
+          }}
+        >
+          +
+        </button>
+        <h1>Domowa biblioteczka</h1>
+        <FilterForm />
+      </main>
     </div>
   );
 }

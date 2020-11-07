@@ -1,36 +1,37 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import deleteBook from "./actions/deleteBook";
+import ClassNames from "classnames";
 
-interface StateBook {
-  title?: String;
-  author?: String;
-  relDate?: number;
-}
 export interface PropsBook {
-  title: String;
-  author: String;
-  relDate: number;
+  id?: number;
+  title: string;
+  author: string;
+  relDate: string;
 }
 
-export default class Book extends React.Component<PropsBook> {
-  state: StateBook = {
-    title: "",
-    author: ""
-  };
-  constructor(props: PropsBook) {
-    super(props);
-
-    this.state.title = props.title;
-    this.state.author = props.author;
-    this.state.relDate = props.relDate;
-  }
-
-  render() {
-    return (
-      <>
-        <div className="ksiazka_tile">
-          <p>{this.state.author}</p>
-        </div>
-      </>
-    );
-  }
-}
+const Book = (props: PropsBook) => {
+  const dispatch = useDispatch();
+  return (
+    <>
+      <div className="library__book">
+        <button
+          className={ClassNames({
+            library__book__close: true
+          })}
+          onClick={(e) => {
+            e.preventDefault();
+            dispatch(deleteBook(props.id));
+          }}
+        ></button>
+        <p className="library__book__title">{props.title}</p>
+        <p className="library__book__author">{props.author}</p>
+        <p className="library__book__released">
+          <span>wydano</span>
+          {props.relDate}
+        </p>
+      </div>
+    </>
+  );
+};
+export default Book;

@@ -1,7 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import deleteBook from "./actions/deleteBook";
 import ClassNames from "classnames";
+
+import deleteBook from "./actions/deleteBook";
 
 export interface PropsBook {
   id?: number;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import AddBookForm from "./AddBookForm";
 import FilterForm from "./FilterForm";
@@ -9,6 +9,9 @@ import "./assets/styles/main.scss";
 
 export default function App() {
   const [hide_form, setHideForm] = useState(true);
+  useEffect(() => {
+    document.title = "Domowa biblioteczka";
+  }, []);
   return (
     <div className="app">
       <nav

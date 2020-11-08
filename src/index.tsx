@@ -8,6 +8,7 @@ import App from "./App";
 
 const store = createStore(
   allReducers,
+  //use Reaux DevTools to help debug
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

@@ -3,8 +3,14 @@ import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import ClassNames from "classnames";
-import { Reducers } from "./App";
 
+interface Reducers {
+  bookManager: any;
+}
+/**
+ * Consists of fields:
+ * - search_title: Title the book tiles will be filtered with
+ */
 const FilterForm = () => {
   let [filterText, setFilterText] = useState("");
   const bookManager = useSelector((state: Reducers) => state.bookManager);
@@ -14,6 +20,7 @@ const FilterForm = () => {
       <form className="title_filter">
         <input
           type="text"
+          name="search_title"
           placeholder="Wyszukaj tytuł"
           onChange={(e: any) => {
             e.persist();
@@ -27,6 +34,7 @@ const FilterForm = () => {
             if (book) {
               return (
                 <div
+                  key={book.id}
                   className={ClassNames({
                     hide: !book.attr.title
                       .toLowerCase()

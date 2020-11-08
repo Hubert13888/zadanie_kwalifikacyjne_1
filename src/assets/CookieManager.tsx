@@ -1,4 +1,10 @@
-const setCookie = (name, value, days) => {
+/**
+ * Set a cookie or update existing one
+ * @param name Name of the new cookie
+ * @param value Stringified value of the new cookie
+ * @param days TTL
+ */
+const setCookie = (name: string, value: string, days: number) => {
   var expires = "";
   if (days) {
     var date = new Date();
@@ -7,6 +13,12 @@ const setCookie = (name, value, days) => {
   }
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
 };
+
+/**
+ * Parse the document.cookie string and get the cookie of given name
+ * @param name Name of the cookie
+ */
+
 const getCookie = (name) => {
   var nameEQ = name + "=";
   var ca = document.cookie.split(";");
@@ -17,6 +29,11 @@ const getCookie = (name) => {
   }
   return null;
 };
+
+/**
+ * Deletes (sets TTL to 0) the cookie
+ * @param name Name of the cookie that needs to be deleted
+ */
 const eraseCookie = (name) => {
   document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 };

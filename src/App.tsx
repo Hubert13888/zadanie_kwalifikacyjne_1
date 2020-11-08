@@ -7,10 +7,6 @@ import ClassNames from "classnames";
 
 import "./assets/styles/main.scss";
 
-export interface Reducers {
-  bookManager: any;
-}
-
 export default function App() {
   const [hide_form, setHideForm] = useState(true);
   return (
